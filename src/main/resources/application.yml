@@ -7,7 +7,9 @@ spring:
     url: jdbc:h2:mem:app;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=TRUE
     username: sa
     password: ''
-  sql:
-    init:
-      mode: always
-      schema-locations: classpath:/db/migration/s.sql
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+    baseline-version: 0.0.0
+    baseline-description: Initial
+    locations: classpath:db/migration
